@@ -1,0 +1,6 @@
+.contents.row
+  - @products.each do |product|
+    .content_post{:style => "background-image: url(#{product.image});"}
+      = simple_format(product.text)
+      %span.name
+        = product.name
