@@ -20,13 +20,17 @@
         s.parentNode.insertBefore(wf, s);
       })();
   %body
-    %header.header
-      .header__bar.row
-        %h1.grid-6
-          %a{:href => "/"} Yasaisisters
-        .user_nav.grid-6
-          %a.post{:href => "/tweets/new"} 投稿する
-    = yield
-    %footer
-      %p
-        Copyright PicTweet 2019.
+  -# ヘッダー始まり
+  %header.header
+    .header__logo
+      野菜シスターズ
+    .header__list
+      .header__list__search
+        %i fontawesome
+      .header__list__login
+        %a(href="#" class="loginbtn")  ログイン
+  -# ヘッダーの終わり
+  = yield
+  %footer.footer
+    %p 会社概要
+    

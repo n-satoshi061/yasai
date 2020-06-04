@@ -1,3 +1,147 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// ヘッダーの始まり
+.header{
+  background-color: rgb(188, 233, 121);
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+  border-bottom: 0.5px solid black;
+  &__logo{
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 50px;
+  }
+  &__list{
+    display: flex;
+    &__search{
+      margin-right: 10px;
+    }
+    &__login{
+      margin-right: 50px;
+      .loginbtn{
+        text-decoration: none;
+        color: black;
+
+      }
+    }
+  }
+}
+// ヘッダーの終わり
+// メイン画像始まり
+.topwrapper{
+  width: 90vw;
+  height: 300px;
+  margin: 0 auto;
+  &__img{
+    width: 80%;
+    height: 300px;
+  }
+}
+// メイン画像終わり
+// カテゴリー欄始まり
+.content{
+  display: flex;
+  .category{
+    // height: calc(100% - 380px);
+    width: 15%;
+    background-color: cornsilk;
+    border-radius: 25px;
+    &__lists{
+      &__list{
+        height: 80px;
+        width: 50%;
+        font-size: 20px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  // カテゴリー欄終わり
+  // コンテンツ始まり
+  .main{
+    width: calc(100vw - 15%);
+    // height: calc(100% - 380px);
+    background-color: #ffaaaa;
+    display: flex;
+    flex-wrap: wrap;
+    &__contents{
+      width: 30%;
+      height: 400px;
+      background-color: #dddddd;
+      margin: 40px 0 30px 20px;
+      &__item{
+        &__img{
+          width: 80px;
+          height: 100px;
+        }
+        &__title{
+          font-size: 20px;
+        }
+        &__price{
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  // コンテンツ終わり
+}
+// メイン終わり
+// フッター始まり
+.footer{
+  width: 100%;
+  height: 100px;
+  background-color: rgb(188, 233, 121);
+  p{
+    padding: 20px;
+  }
+}
+// フッター終わり
+// 詳細ページ始まり
+.show{
+  width: 100vw;
+  height: 60vh;
+  padding-top: 80px;
+  display: flex;
+  &__img{
+    width: 500px;
+    height: 600px;
+  }
+  &__data{
+    padding: 100px 0 0 100px;  
+    &__name{
+      font-size: 30px;
+      font-weight: bold;
+    }
+    &__date{
+      font-size: 20px;
+    }
+    &__price{
+      font-size: 30px;
+    }
+    &__btn{
+      input{
+        background-color: #cab270;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+  &__exolan{
+    padding: 100px 0 0 40px;
+    font-size: 30px;
+  }
+}
+.producer{
+  width: 100vw;
+  height: 20vh;
+  background-color: blanchedalmond;
+  border-top: 1px solid black;
+  &__voice{
+    font-size: 15px;
+    padding: 20px 0 0 200px;
+  }
+}
