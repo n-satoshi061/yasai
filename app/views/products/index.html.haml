@@ -1,6 +1,37 @@
-.contents.row
-  - @products.each do |product|
-    .content_post{:style => "background-image: url(#{product.image});"}
-      = simple_format(product.text)
-      %span.name
-        = product.name
+-# メイン画像始まり
+.topwrapper
+  %img(src="../../../app/assets/images/topwrapper.jpeg" alt="野菜" class="topwrapper__img")/
+  -# メイン画像終わり
+  -# カテゴリー欄始まり
+.content
+  .category
+    %ul.category__lists
+      %li.category__lists__list にんじん
+      %li.category__lists__list ピーマン
+      %li.category__lists__list 白菜
+      %li.category__lists__list ほうれん草
+      %li.category__lists__list 大根
+  -# カテゴリー欄終わり
+  -# コンテンツ始まり
+  .main
+    .main__contents
+      .main__contents__item
+        %img(src="app/assets/images/topwrapper.jpeg" alt="販売されている野菜" class="main__contents__item__img")/
+        %p.main__contents__item__title title
+        %p.main__contents__item__price price
+    .main__contents
+      .main__contents__item
+        %img(src="" alt="" class="main__contents__item__img")/
+        %p.main__contents__item__title title
+        %p.main__contents__item__price price
+    .main__contents
+      .main__contents__item
+        %img(src="" alt="" class="main__contents__item__img")/
+        %p.main__contents__item__title title
+        %p.main__contents__item__price price
+    .main__contents
+      .main__contents__item
+        %img(src="" alt="" class="main__contents__item__img")/
+        %p.main__contents__item__title title
+        %p.main__contents__item__price price
+-# コンテンツ終わり

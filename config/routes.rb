@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :products, only: :index
+  devise_for :users
+  root to: 'products#index'
+  resources :products, only: :show
+  resources :users, only: :show
 end
