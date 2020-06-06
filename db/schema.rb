@@ -25,11 +25,10 @@ ActiveRecord::Schema.define(version: 2020_06_05_035413) do
   end
 
   create_table "order_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "order_id", null: false
+    t.integer "order_id", null: false
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_order_details_on_order_id"
     t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
@@ -91,7 +90,6 @@ ActiveRecord::Schema.define(version: 2020_06_05_035413) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
   add_foreign_key "order_pays", "orders"
   add_foreign_key "order_pays", "pays"

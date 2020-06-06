@@ -9,7 +9,8 @@
     .show__data__price
       値段
     .show__data__btn
-      %input(type='submit' value="購入する")/
+      = link_to product_order_index_path, product_id: product_id, method: :post do
+        %button 購入する
   .show__exolan
     商品説明
 .producer
