@@ -3,14 +3,15 @@
     %img(src="" alt="")/
   .show__data
     .show__data__name
-      商品の名前
+      = @products.name
     .show__data__date
       発送日
     .show__data__price
-      値段
+      = @products.price
     .show__data__btn
-      = link_to product_order_index_path, product_id: product_id, method: :post do
-        %button 購入する
+      = link_to product_order_index_path(1),method: :post do
+        %button{type: "submit", class:'btn'}
+          購入する
   .show__exolan
     商品説明
 .producer
