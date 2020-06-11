@@ -1,6 +1,8 @@
 -# メイン画像始まり
 .topwrapper
-  %img(src="../../../app/assets/images/topwrapper.jpeg" alt="野菜" class="topwrapper__img")/
+  -# %img(src="../../../public/publicdomainq-0031538eqk.jpg" alt="野菜" class="topwrapper__img")
+  -# %img (src="../../../public/publicdomainq-0031538eqk.jpg" alt="野菜" class="topwrapper__img")
+  %img{ src: "/publicdomainq-0031538eqk.jpg", alt: "野菜", class: "topwrapper__img"}
   -# メイン画像終わり
   -# カテゴリー欄始まり
 .content
@@ -14,24 +16,37 @@
   -# カテゴリー欄終わり
   -# コンテンツ始まり
   .main
-    .main__contents
-      .main__contents__item
-        %img(src="app/assets/images/topwrapper.jpeg" alt="販売されている野菜" class="main__contents__item__img")/
-        %p.main__contents__item__title title
-        %p.main__contents__item__price price
-    .main__contents
-      .main__contents__item
-        %img(src="" alt="" class="main__contents__item__img")/
-        %p.main__contents__item__title title
-        %p.main__contents__item__price price
-    .main__contents
-      .main__contents__item
-        %img(src="" alt="" class="main__contents__item__img")/
-        %p.main__contents__item__title title
-        %p.main__contents__item__price price
-    .main__contents
-      .main__contents__item
-        %img(src="" alt="" class="main__contents__item__img")/
-        %p.main__contents__item__title title
-        %p.main__contents__item__price price
+    - @product.each do |product|
+      .main__contents
+        .main__contents__item
+          = image_tag(url_for(:controller => 'products', :action => 'index', :id => params[:id]), :size => '100x100')
+          = link_to product_path(product), class: "main__contents__item__name" do
+            = product.name
+          .main__contents__item__price
+            = product.price
+            %p 円
+    -# = link_to '#' do
+    -#   .main__contents
+    -#     .main__contents__item
+    -#       %img(src="app/assets/images/topwrapper.jpeg" alt="販売されている野菜" class="main__contents__item__img")/
+    -#       %p.main__contents__item__title title
+    -#       %p.main__contents__item__price price
+    -# = link_to '#' do
+    -#   .main__contents
+    -#     .main__contents__item
+    -#       %img(src="" alt="" class="main__contents__item__img")/
+    -#       %p.main__contents__item__title title
+    -#       %p.main__contents__item__price price
+    -# = link_to '#' do
+    -#   .main__contents
+    -#     .main__contents__item
+    -#       %img(src="" alt="" class="main__contents__item__img")/
+    -#       %p.main__contents__item__title title
+    -#       %p.main__contents__item__price price
+    -# = link_to '#' do
+    -#   .main__contents
+    -#     .main__contents__item
+    -#       %img(src="" alt="" class="main__contents__item__img")/
+    -#       %p.main__contents__item__title title
+    -#       %p.main__contents__item__price price
 -# コンテンツ終わり

@@ -2,7 +2,7 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
-    %title Yasai
+    %title Yasaii!ショッピング
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -20,15 +20,31 @@
         s.parentNode.insertBefore(wf, s);
       })();
   %body
+    = render 'layouts/notifications'
   -# ヘッダー始まり
   %header.header
-    .header__logo
-      野菜直売所
+    =link_to root_path, class: "header__link" do
+      .header__link__logo
+        %h1
+          Yasaii!
+          %span ショッピング
     .header__list
       .header__list__search
-        %i fontawesome
-      .header__list__login
-        %a(href="#" class="loginbtn")  ログイン
+        -# %i fontawesome
+      -# %h3.header__name
+      -#   = current_user.name
+      - if user_signed_in?
+        .header__list__logout
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__list__logout__link"
+        .header__list__edit
+          = link_to "アカウント編集", edit_user_path(current_user), class: "header__list__edit__link"
+      - else
+        .header__list__new
+          = link_to "新規登録", new_user_registration_path, class: "header__list__new__link"
+        .header__list__login
+          = link_to "ログイン", user_session_path, method: :post, class: "header__list__login__link"
+          
+      
   -# ヘッダーの終わり
   = yield
   %footer.footer

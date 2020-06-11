@@ -1,9 +1,12 @@
 class OrdersController < ApplicationController
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   def create
-    @order = Order.find(params[:id])
-    
-    redirect_to root_path, notice: 'メッセージが送信されました'
+    @order = Product.find(params[:id])
+    redirect_to root_path, notice: '購入が完了しました。'
   end
 
   private

@@ -5,5 +5,5 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
 
   has_many :orders
-
+  validates :name, presence: true, uniqueness: true
 end
