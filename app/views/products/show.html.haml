@@ -1,22 +1,23 @@
 .show
   .show__img
-    %img(src="" alt="")/
+    = image_tag @products.image, class: "show__img__image"
   .show__data
     .show__data__name
       = @products.name
-    .show__data__date
-      発送日
     .show__data__price
       = @products.price
+      %p.show__data__price__en 円
     .show__data__btn
       = link_to product_order_index_path(1),method: :post do
         %button{type: "submit", class:'btn'}
           購入する
   .show__exolan
-    商品説明
+    %p 商品説明
+    = @products.explan
 .producer
   .producer__voice
     %p 生産者の声
+    = @products.voice
   
   
 

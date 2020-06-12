@@ -15,11 +15,12 @@
       %li.category__lists__list 大根
   -# カテゴリー欄終わり
   -# コンテンツ始まり
+  -# accepts_nested_attributes_for
   .main
     - @product.each do |product|
       .main__contents
         .main__contents__item
-          = image_tag(url_for(:controller => 'products', :action => 'index', :id => params[:id]), :size => '100x100')
+          = image_tag product.image, class: "main__contents__item__img"
           = link_to product_path(product), class: "main__contents__item__name" do
             = product.name
           .main__contents__item__price
