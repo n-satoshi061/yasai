@@ -7,4 +7,7 @@ class ProductsController < ApplicationController
     @products = Product.find(params[:id])
   end
 
+  def tweet_params
+    params.require(:tweet).permit(:image, :text).merge(user_id: current_user.id)
+  end
 end
