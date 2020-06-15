@@ -28,6 +28,13 @@
     &__search{
       margin-right: 10px;
     }
+    &__name{
+      height: 80px;
+      width: 80px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+    }
     &__logout{
       margin-right: 10px;
       height: 80px;

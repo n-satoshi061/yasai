@@ -31,9 +31,9 @@
     .header__list
       .header__list__search
         -# %i fontawesome
-      -# %h3.header__name
-      -#   = current_user.name
       - if user_signed_in?
+        .header__list__name
+          = current_user.name
         .header__list__logout
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__list__logout__link"
         .header__list__edit
